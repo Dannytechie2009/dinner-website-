@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Couple's Dinner 2025</title>
+
+  <!-- Tailwind must load first -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Toggle Button -->
+  <button id="menu-toggle" class="menu-btn fixed top-4 left-4 z-50 p-3 bg-white/20 backdrop-blur-md rounded-lg text-white shadow-lg">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Close Button (hidden initially) -->
+  <button id="close-btn" class="close-btn hidden fixed top-4 left-4 z-50 p-3 bg-white/20 backdrop-blur-md rounded-lg text-white shadow-lg">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <nav id="sidebar" class="glass-sidebar fixed top-0 left-0 h-full w-64 bg-white/10 backdrop-blur-lg shadow-xl transform -translate-x-full transition-transform duration-500 z-40">
+    <ul class="mt-20 space-y-4 px-6">
+      <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about"><i class="fa-solid fa-info-circle"></i> About</a></li>
+      <li><a href="#payment"><i class="fa-solid fa-credit-card"></i> Payment</a></li>
+      <li><a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      <li><a href="#venue"><i class="fa-solid fa-location-dot"></i> Venue</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="content" class="transition">
+    <!-- Hero -->
+    <section id="home" class="hero h-screen flex flex-col justify-center items-center text-center text-white">
+      <h1 class="text-5xl font-bold">Couple's Dinner 2025</h1>
+      <p class="mt-4 text-lg">An unforgettable night of love, laughter, and fellowship.</p>
+    </section>
+
+    <!-- Seats -->
+    <section id="seats" class="section py-16">
+      <div class="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl flex flex-col items-center">
+        <i class="fa-solid fa-chair text-yellow-400 text-5xl mb-4"></i>
+        <h3 class="text-4xl font-bold text-white mb-2" id="seats-count">0</h3>
+        <p class="text-lg text-gray-200">Seats Left</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section py-16 px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">About the Event</h2>
+      <p>
+        The Couple’s Dinner 2025 is designed as a warm and intimate gathering where couples 
+        can enjoy a night of relaxation, celebration, and connection. It will feature 
+        fine dining, music, guest speakers, and moments to strengthen relationships.  
+        This year’s dinner promises to be bigger and better than ever.  
+      </p>
+    </section>
+
+    <!-- Payment -->
+    <section id="payment" class="section py-16 text-center">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-6">Make a Payment</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="#fullpayment"
+          class="px-8 py-4 rounded-full border border-white text-white font-bold backdrop-blur-md bg-white/10 hover:bg-yellow-400 hover:text-black transition">
+          Full Payment (£100)
+        </a>
+        <a href="#installment"
+          class="px-8 py-4 rounded-full border border-white text-white font-bold backdrop-blur-md bg-white/10 hover:bg-yellow-400 hover:text-black transition">
+          Installment (£50)
+        </a>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section id="venue" class="section py-16 text-center">
+      <h2 class="text-3xl font-bold mb-6">Venue</h2>
+      <p><i class="fa-solid fa-location-dot"></i> The Hope Centre, Sheffield</p>
+      <a href="https://maps.google.com/?q=The+Hope+Centre+Sheffield" target="_blank" class="underline">
+        📍 View on Google Maps
+      </a>
+    </section>
+     <!-- FAQ Section -->
+  <section id="faq" class="py-16 px-6 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-10">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="faq-item bg-white/10 backdrop-blur-md border border-yellow-400 rounded-xl shadow-lg overflow-hidden">
+      
+   <!-- FAQ Section -->
+  <section id="faq" class="py-16 px-6 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-10">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="faq-item bg-white/10 backdrop-blur-md border border-yellow-400 rounded-xl shadow-lg overflow-hidden">
+        <button class="w-full flex justify-between items-center p-4 text-left text-white font-semibold transition hover:text-yellow-400">
+          <span>What is the dress code?</span>
+          <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content px-4 text-gray-200">
+          <p>Formal or smart casual.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white/10 backdrop-blur-md border border-yellow-400 rounded-xl shadow-lg overflow-hidden">
+        <button class="w-full flex justify-between items-center p-4 text-left text-white font-semibold transition hover:text-yellow-400">
+          <span>Can I bring a guest?</span>
+          <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content px-4 text-gray-200">
+          <p>Yes, please include them when making payment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white/10 backdrop-blur-md border border-yellow-400 rounded-xl shadow-lg overflow-hidden">
+        <button class="w-full flex justify-between items-center p-4 text-left text-white font-semibold transition hover:text-yellow-400">
+          <span>Is parking available?</span>
+          <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content px-4 text-gray-200">
+          <p>Yes, free parking is available at the venue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section py-16">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-6 text-center">Contact Us</h2>
+      <form class="max-w-lg mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl space-y-5">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-transparent border border-yellow-400 text-white" />
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-transparent border border-yellow-400 text-white" />
+        <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 rounded-lg bg-transparent border border-yellow-400 text-white"></textarea>
+        <button type="submit" class="w-full py-3 rounded-lg bg-yellow-400 text-black font-bold hover:bg-yellow-500 transition">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black/40 backdrop-blur-md mt-10">
+      <div class="flex justify-center gap-8 text-2xl">
+        <a href="#" class="text-gray-300 hover:text-yellow-400"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="text-gray-300 hover:text-yellow-400"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="text-gray-300 hover:text-yellow-400"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="text-gray-300 hover:text-yellow-400"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-4">© 2025 Couple’s Dinner. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Seats Counter -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const countEl = document.getElementById("seats-count");
+      let count = 0;
+      const target = 50;
+      const speed = 30;
+
+      const counter = setInterval(() => {
+        if (count < target) {
+          count++;
+          countEl.textContent = count;
+        } else {
+          clearInterval(counter);
+        }
+      }, speed);
+    });
+
+    // Sidebar toggle
+    const menuBtn = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("close-btn");
+    const sidebar = document.getElementById("sidebar");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.remove("-translate-x-full");
+      menuBtn.classList.add("hidden");
+      closeBtn.classList.remove("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      closeBtn.classList.add("hidden");
+      menuBtn.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

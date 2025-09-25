@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4b3832, #7b5e57, #d4af37);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Hero Section with Blurred Background */
+.hero {
+  height: 100vh;
+  background: url('/image.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #f1c40f;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* Toggle Buttons */
+.menu-btn, .close-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #f1c40f;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s ease;
+}
+
+.menu-btn:hover,
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sidebar */
+.glass-sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  transition: left 0.3s ease-in-out;
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+.glass-sidebar.active {
+  left: 0;
+}
+
+.glass-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.glass-sidebar li {
+  margin: 20px 0;
+}
+.glass-sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  margin: 8px 15px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 4px rgba(255,255,255,0.2),
+              0 4px 12px rgba(0,0,0,0.3);
+}
+
+.glass-sidebar a i {
+  margin-right: 12px;
+  color: #f1c40f;
+  font-size: 1.2rem;
+}
+
+.glass-sidebar a:hover {
+  background: rgba(241, 196, 15, 0.2);
+  color: #f1c40f;
+  transform: translateX(5px);
+  box-shadow: inset 0 1px 6px rgba(255,255,255,0.3),
+              0 6px 16px rgba(0,0,0,0.4);
+}
+
+
+.glass-sidebar a i {
+  margin-right: 10px;
+  color: #f1c40f;
+}
+
+.glass-sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #f1c40f;
+}
+
+/* Sections */
+.section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 40px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* FAQ Dropdown */
+.faq-item {
+  margin: 15px 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-answer {
+  padding: 0 15px 15px;
+  display: none;
+  color: #ddd;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Contact Form */
+.contact-box {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-box button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-box button:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 40px;
+}
+
+footer .social-icons {
+  margin: 15px 0;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  color: #f1c40f;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+}
