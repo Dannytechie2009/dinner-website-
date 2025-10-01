@@ -16,21 +16,88 @@ section {
   padding: 60px 20px;
   text-align: left;
 }
-.copy
-{
-  cursor: pointer;
-  position: relative;
-  max-width: 135px;
-  margin-left: 135px;
-  margin-right: 135px;
-  border-radius: 20px;
-  background-color: #d4af37;
-  color: #000000;
-  border: none;
-  padding: 20px;
-  justify-items: center;
-  justify-content: center;
+/* Copy Bank Details Button */
+.copy-btn-container {
+  text-align: center; /* centers the button */
+  margin-top: 20px;
 }
+
+.copy {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid #f1c40f;
+  color: #f1c40f;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 4px rgba(255,255,255,0.3),
+              0 4px 12px rgba(0,0,0,0.4);
+}
+
+.copy:hover {
+  background: #f1c40f;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12, 0 0 30px #f1c40f;
+}
+/* Transaction Section */
+.transaction-steps {
+  display: grid;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.step {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step i {
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.step p, .step ul {
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.bank-details {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.bank-details li {
+  margin: 8px 0;
+}
+
+/* Reuse Copy Button Styling */
+.copy {
+  margin-top: 15px;
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -208,36 +275,62 @@ section {
 }
 
 /* Contact Form */
-.contact-box {
-  background: rgba(0, 0, 0, 0.4);
+.contact-form {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
   border-radius: 12px;
-  padding: 50px;
+  padding: 30px;
   max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
-.contact-box input,
-.contact-box textarea {
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #f1c40f;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  margin: 10px 0;
   padding: 12px;
   border-radius: 8px;
   border: none;
   outline: none;
   font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
-.contact-box button {
-  margin-top: 15px;
-  padding: 12px 20px;
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
   background: #f1c40f;
   color: #000;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-.contact-box button:hover { transform: scale(1.05); }
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px #f1c40f;
+}
 
 /* Footer */
 footer {
