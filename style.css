@@ -322,63 +322,14 @@ section {
 .faq-item.active .faq-question i {
   transform: rotate(180deg);
 }
-
-/* Contact Form */
-.contact-form {
-  background: rgba(0, 0, 0, 0.45);
+#contact {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  padding: 30px;
-  max-width: 600px;
-  margin: 30px auto;
+  padding: 40px 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.contact-form .form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #f1c40f;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #aaa;
-}
-
-.contact-btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background: #f1c40f;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px #f1c40f;
 }
 
 /* Footer */
@@ -765,6 +716,7 @@ footer .social-icons a:hover {
   transform: scale(1.2);
   text-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12;
 }
+
 
 
 
