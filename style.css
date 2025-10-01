@@ -21,7 +21,30 @@ section {
   text-align: center; /* centers the button */
   margin-top: 20px;
 }
+#about {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 40px 25px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
 
+#about h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 20px;
+}
+
+#about p {
+  line-height: 1.7;
+  color: #eee;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
 .copy {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
