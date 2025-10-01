@@ -1,3 +1,4 @@
+// Countdown Timer
 const deadline = new Date("Oct 31, 2025 23:59:59").getTime();
 const timerElement = document.getElementById("timer");
 
@@ -17,17 +18,15 @@ setInterval(() => {
 
   timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
-// Seats Left Widget (simulate backend update)
+
+// Seats Left Widget
 function updateSeatsLeft(seats) {
   document.getElementById("seats-count").innerText = seats;
 }
+// Temporary demo
+updateSeatsLeft(100);
 
-// Example: fetch from backend API later
-// fetch("/api/seats").then(res => res.json()).then(data => updateSeatsLeft(data.seats));
-
-// Temporary static demo
-updateSeatsLeft(72);
-
+// Copy bank details
 function copyAccount() {
   const accountDetails = `
 Bank: Chase Bank UK
@@ -39,21 +38,42 @@ Sort Code: 04-29-09
     alert("✅ Bank account details copied to clipboard!");
   });
 }
-// faq.js
-document.querySelectorAll(".faq-item button").forEach(button => {
-  button.addEventListener("click", () => {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector("i");
 
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      icon.classList.remove("rotate-180");
-    } else {
-      document.querySelectorAll(".faq-content").forEach(c => c.style.maxHeight = null);
-      document.querySelectorAll(".faq-item i").forEach(i => i.classList.remove("rotate-180"));
-      content.style.maxHeight = content.scrollHeight + "px";
-      icon.classList.add("rotate-180");
-    }
+// FAQ Dropdown Toggle
+document.querySelectorAll(".faq-question").forEach(question => {
+  question.addEventListener("click", () => {
+    const item = question.closest(".faq-item");
+
+    // Close others
+    document.querySelectorAll(".faq-item").forEach(faq => {
+      if (faq !== item) faq.classList.remove("active");
+    });
+
+    // Toggle current
+    item.classList.toggle("active");
   });
 });
 
+// Sidebar Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const closeBtn = document.getElementById("close-btn");
+  const sidebar = document.getElementById("sidebar");
+
+  function openSidebar() {
+    sidebar.classList.remove("-translate-x-full");
+    sidebar.classList.add("active");
+    menuBtn.classList.add("hidden");
+    closeBtn.classList.remove("hidden");
+  }
+
+  function closeSidebar() {
+    sidebar.classList.add("-translate-x-full");
+    sidebar.classList.remove("active");
+    closeBtn.classList.add("hidden");
+    menuBtn.classList.remove("hidden");
+  }
+
+  menuBtn.addEventListener("click", openSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
+});
