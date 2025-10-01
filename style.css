@@ -14,10 +14,24 @@ h1, h2, h3, h4 {
 
 section {
   padding: 60px 20px;
-  text-align: center;
+  text-align: left;
 }
-
-/* Hero Section with Blurred Background */
+.copy
+{
+  cursor: pointer;
+  position: relative;
+  max-width: 135px;
+  margin-left: 135px;
+  margin-right: 135px;
+  border-radius: 20px;
+  background-color: #d4af37;
+  color: #000000;
+  border: none;
+  padding: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+/* Hero Section */
 .hero {
   height: 100vh;
   background: url('/image.jpg') center/cover no-repeat;
@@ -30,7 +44,6 @@ section {
   color: #fff;
   padding: 20px;
 }
-
 .hero::before {
   content: "";
   position: absolute;
@@ -42,23 +55,24 @@ section {
   backdrop-filter: blur(6px);
   z-index: 1;
 }
-
 .hero h1,
 .hero p {
   position: relative;
   z-index: 2;
 }
-
 .hero h1 {
   font-size: 3rem;
   color: #f1c40f;
   margin-bottom: 20px;
 }
-
 .hero p {
   font-size: 1.2rem;
   max-width: 700px;
   line-height: 1.6;
+}
+.about h1
+{
+  text-align: left;
 }
 
 /* Toggle Buttons */
@@ -77,14 +91,24 @@ section {
   z-index: 1001;
   transition: transform 0.2s ease;
 }
-
-.menu-btn:hover,
-.close-btn:hover {
+.menu-btn:hover, .close-btn:hover {
   transform: scale(1.1);
 }
+.hidden { display: none; }
+/* Sidebar Logo */
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2; /* keeps it above the blur */
+}
 
-.hidden {
-  display: none;
+.sidebar-logo img {
+  width: 150px;       /* adjust size as needed */
+  height: auto;
+  align-items: left;
+  
+  padding: 10px;
 }
 
 /* Sidebar */
@@ -96,23 +120,19 @@ section {
   height: 100%;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
-  transition: left 0.3s ease-in-out;
+  transition: left 0.4s ease-in-out;
   padding-top: 80px;
   z-index: 1000;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .glass-sidebar.active {
   left: 0;
 }
-
 .glass-sidebar ul {
   list-style: none;
   padding: 0;
 }
-
-.glass-sidebar li {
-  margin: 20px 0;
-}
+.glass-sidebar li { margin: 20px 0; }
 .glass-sidebar a {
   text-decoration: none;
   color: #fff;
@@ -127,31 +147,17 @@ section {
   box-shadow: inset 0 1px 4px rgba(255,255,255,0.2),
               0 4px 12px rgba(0,0,0,0.3);
 }
-
 .glass-sidebar a i {
   margin-right: 12px;
   color: #f1c40f;
   font-size: 1.2rem;
 }
-
 .glass-sidebar a:hover {
   background: rgba(241, 196, 15, 0.2);
   color: #f1c40f;
   transform: translateX(5px);
   box-shadow: inset 0 1px 6px rgba(255,255,255,0.3),
               0 6px 16px rgba(0,0,0,0.4);
-}
-
-
-.glass-sidebar a i {
-  margin-right: 10px;
-  color: #f1c40f;
-}
-
-.glass-sidebar a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  color: #f1c40f;
 }
 
 /* Sections */
@@ -171,8 +177,8 @@ section {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 8px;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
-
 .faq-question {
   padding: 15px;
   cursor: pointer;
@@ -181,27 +187,35 @@ section {
   align-items: center;
   justify-content: space-between;
 }
-
 .faq-answer {
-  padding: 0 15px 15px;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 15px;
   color: #ddd;
+  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
 }
-
 .faq-item.active .faq-answer {
-  display: block;
+  max-height: 400px;
+  opacity: 1;
+  padding: 15px;
+}
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
 }
 
 /* Contact Form */
 .contact-box {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
-  padding: 30px;
+  padding: 50px;
   max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
-
 .contact-box input,
 .contact-box textarea {
   width: 100%;
@@ -212,7 +226,6 @@ section {
   outline: none;
   font-size: 1rem;
 }
-
 .contact-box button {
   margin-top: 15px;
   padding: 12px 20px;
@@ -224,10 +237,7 @@ section {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
-.contact-box button:hover {
-  transform: scale(1.05);
-}
+.contact-box button:hover { transform: scale(1.05); }
 
 /* Footer */
 footer {
@@ -236,18 +246,14 @@ footer {
   background: rgba(0, 0, 0, 0.5);
   margin-top: 40px;
 }
-
-footer .social-icons {
-  margin: 15px 0;
-}
-
+footer .social-icons { margin: 15px 0; }
 footer .social-icons a {
   margin: 0 10px;
   color: #f1c40f;
   font-size: 1.5rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, text-shadow 0.3s ease;
 }
-
 footer .social-icons a:hover {
   transform: scale(1.2);
+  text-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12;
 }
