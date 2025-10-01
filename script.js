@@ -56,3 +56,4 @@ document.querySelectorAll(".faq-item button").forEach(button => {
     }
   });
 });
+
