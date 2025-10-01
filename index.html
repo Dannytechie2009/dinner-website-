@@ -28,6 +28,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <h1>Couple’s Dinner 2025</h1>
+    <h2>Inspired by the men of the redeem church of God </h2>
     <p>Join us for an unforgettable evening filled with love, joy, and togetherness.</p>
     <p><strong>Countdown:</strong> <span id="timer"></span></p>
     <p><strong>Seats Left:</strong> <span id="seats-count">--</span></p>
@@ -90,19 +91,84 @@
       </div>
     </div>
   </section>
-   <button class="copy" onclick="copyAccount()">Copy Bank Details</button>
+
+  <section id="transaction" class="section">
+  <h2><i class="fas fa-university"></i> How to Make a Transaction</h2>
+  <p>Follow these simple steps to complete your payment securely.</p>
+
+  <div class="transaction-steps">
+    <!-- Step 1 -->
+    <div class="step">
+      <i class="fas fa-info-circle"></i>
+      <h3>Step 1: Copy Bank Details</h3>
+      <p>Click the button below to copy account details for the transfer.</p>
+      <button class="copy" onclick="copyAccount()">Copy Bank Details</button>
+        
+      </button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Step 2: Open Your Banking App</h3>
+      <p>Log in to your bank app or use online banking to start a transfer.</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <i class="fas fa-keyboard"></i>
+      <h3>Step 3: Enter Bank Details</h3>
+      <p>Paste or type in the details carefully:</p>
+      <ul class="bank-details">
+        <li><strong>Bank:</strong> Chase Bank UK</li>
+        <li><strong>Account Name:</strong> Couple’s Dinner 2025</li>
+        <li><strong>Account Number:</strong> 12345678</li>
+        <li><strong>Sort Code:</strong> 04-29-09</li>
+      </ul>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <i class="fas fa-check-circle"></i>
+      <h3>Step 4: Confirm & Send</h3>
+      <p>Verify all details, confirm the transaction, and save your receipt.</p>
+    </div>
+  </div>
+</section>
+
+
+
   <!-- Contact Section -->
   <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <div class="contact-box">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+  <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+  <h3>For futher information about the event <br> Fill out the form below and we’ll get back to you.</h3>
+
+  <form action="https://formspree.io/f/mgvnywvg" method="POST" class="contact-form">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name"><i class="fas fa-user"></i> Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name">
     </div>
-  </section>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email"><i class="fas fa-at"></i> Your Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="contact-btn">
+      <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer>
