@@ -36,10 +36,10 @@ updateSeatsLeft(100);
 // Copy bank details
 function copyAccount() {
   const accountDetails = `
-Bank: Chase Bank UK
-Account Name: Couple’s Dinner 2025
-Account Number: 12345678
-Sort Code: 04-29-09
+Acc name: Olurotimi Aboaba 
+Acc no: 93701255
+Sort code: 60-84-07
+Bank: Chase Bank
   `;
   navigator.clipboard.writeText(accountDetails).then(() => {
     alert("✅ Bank account details copied to clipboard!");
@@ -84,4 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
   menuBtn.addEventListener("click", openSidebar);
   closeBtn.addEventListener("click", closeSidebar);
 });
+
 
