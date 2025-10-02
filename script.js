@@ -1,3 +1,10 @@
+//cursor
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
+});
+
 // Countdown Timer
 const deadline = new Date("Oct 31, 2025 23:59:59").getTime();
 const timerElement = document.getElementById("timer");
@@ -77,3 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
   menuBtn.addEventListener("click", openSidebar);
   closeBtn.addEventListener("click", closeSidebar);
 });
+
