@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The  Love Convenant  Dinner 2025</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+  <div id="cursor"></div>
   <!-- Sidebar Toggle Buttons -->
   <button id="menu-btn" class="menu-btn"><i class="fas fa-bars"></i></button>
   <button id="close-btn" class="close-btn hidden"><i class="fas fa-times"></i></button>
@@ -35,9 +37,9 @@
    
   </section>
   <!-- About the event -->
-<section id="about" class="section">
-  <h2><i class="fas fa-heart"></i> About</h2>
-  <p>
+<section id="about" class="section" data-aos="fade-up">
+  <h2 data-aos="zoom-in">><i class="fas fa-heart"></i> About</h2>
+  <p data-aos="fade-right">
     The Convenant Dinner Night is an evening designed to strengthen relationships and create space for couples to connect in a
     meaningful way. Life can be busy, and this gathering is a chance to slow down, enjoy each other’s company, and share in a
     supportive community atmosphere.
@@ -172,10 +174,18 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed
+    once: true,     // animate only once
+  });
+</script>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
