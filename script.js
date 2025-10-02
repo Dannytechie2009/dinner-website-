@@ -31,7 +31,7 @@ function updateSeatsLeft(seats) {
   document.getElementById("seats-count").innerText = seats;
 }
 // Temporary demo
-updateSeatsLeft(100);
+updateSeatsLeft(200);
 
 // Copy bank details
 function copyAccount() {
@@ -84,5 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   menuBtn.addEventListener("click", openSidebar);
   closeBtn.addEventListener("click", closeSidebar);
 });
+
 
 
