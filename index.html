@@ -44,17 +44,17 @@
     meaningful way. Life can be busy, and this gathering is a chance to slow down, enjoy each other’s company, and share in a
     supportive community atmosphere.
   </p>
-  <p>
+  <p data-aos="fade-right>
     A shared meal will be part of the evening, giving couples the opportunity to sit together, talk, and engage in conversation
     with others in a relaxed setting. While food will be served, the heart of the event is about encouragement, fellowship, and
     building lasting connections.
   </p>
-  <p>
+  <p data-aos="fade-right>
     Whether you have been married for many years, are newlyweds, or are just beginning your journey together, you will find this
     night welcoming and enriching. Couples can expect not only time together but also uplifting messages, laughter, and the joy
     of being surrounded by others who value commitment and love.
   </p>
-  <p>
+  <p data-aos="fade-right>
     Hosted by <strong>The Redeem Christain Church of God Sheffield UK</strong>, this evening reflects our commitment to supporting healthy relationships and
     offering couples a space to grow both individually and together. Everyone is invited to come as they are and be part of a
     night that celebrates love, unity, and community.
@@ -140,6 +140,22 @@
     </div>
   </div>
 </section>
+<section id="map" class="section py-16 text-center">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-6">
+    <i class="fa-solid fa-map-location-dot mr-2"></i> Find Us
+  </h2>
+  <div class="map-container mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.4048613286343!2d-1.4700853842366718!3d53.38305687998933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48798336dff9fcb1%3A0xa7cf9e5f4e5ff36!2sThe%20Hope%20Centre%2C%20Sheffield!5e0!3m2!1sen!2suk!4v1696933628717!5m2!1sen!2suk" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
 
 
 <section id="contact" class="section">
@@ -180,11 +196,39 @@
     duration: 1000, // animation speed
     once: true,     // animate only once
   });
-</script>
+  // Smooth transitions for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const targetId = this.getAttribute("href");
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+        document.body.classList.remove("fade-out");
+      }, 400);
+    }
+  });
+});
+
+</script>
+<style>
+  /* Smooth Fade Transition */
+body {
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+</style>
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
