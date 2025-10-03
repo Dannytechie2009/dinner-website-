@@ -226,6 +226,53 @@
     <i class="fas fa-user-secret"></i> Go to Anonymous Form
   </a>
 </section>
+  <section id="seats" class="section">
+  <h2>Seats Left</h2>
+  <p>Only <span id="seats-count">Loading...</span> seats remaining!</p>
+</section>
+<script>// Google Sheet Published HTML Link
+const sheetHtmlUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZYg8LETwOxGYlUFs2fRXw20h15vqTrNTi7VLMyMLnivLGW6l52rLAMdtBjlK63k-bsGzChKf5GdUy/pubhtml?gid=0&single=true";
+
+// Utility to fetch rows from published sheet
+async function fetchSheetHtml() {
+  const res = await fetch(sheetHtmlUrl);
+  const text = await res.text();
+
+  // Parse HTML from Google Sheet
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, "text/html");
+  const table = doc.querySelector("table");
+
+  if (!table) throw new Error("No table found in published sheet");
+
+  const rows = Array.from(table.querySelectorAll("tr"));
+  return rows;
+}
+
+// Update seats dynamically
+async function updateSeatsFromSheet() {
+  try {
+    const rows = await fetchSheetHtml();
+
+    // Subtract 1 for header row
+    const registrations = rows.length - 1;
+
+    const totalSeats = 100; // Change to your actual number of seats
+    const seatsLeft = totalSeats - registrations;
+
+    document.getElementById("seats-count").innerText = seatsLeft >= 0 ? seatsLeft : 0;
+  } catch (err) {
+    console.error("Error updating seats:", err);
+    document.getElementById("seats-count").innerText = "Error";
+  }
+}
+
+// Run on load
+updateSeatsFromSheet();
+
+// Optionally refresh seats every 30 seconds
+// setInterval(updateSeatsFromSheet, 30000);
+</script>
 
 
 <!-- Add Tally script once at bottom -->
@@ -281,6 +328,7 @@ body.fade-out {
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
