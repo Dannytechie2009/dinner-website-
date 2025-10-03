@@ -231,33 +231,19 @@
   <p>Only <span id="seats-count">Loading...</span> seats remaining!</p>
 </section>
 <script>// Google Sheet Published HTML Link
-const sheetHtmlUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZYg8LETwOxGYlUFs2fRXw20h15vqTrNTi7VLMyMLnivLGW6l52rLAMdtBjlK63k-bsGzChKf5GdUy/pubhtml?gid=0&single=true";
+// Google Sheet Published CSV Link
+const sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZYg8LETwOxGYlUFs2fRXw20h15vqTrNTi7VLMyMLnivLGW6l52rLAMdtBjlK63k-bsGzChKf5GdUy/pub?gid=0&single=true&output=csv";
 
-// Utility to fetch rows from published sheet
-async function fetchSheetHtml() {
-  const res = await fetch(sheetHtmlUrl);
-  const text = await res.text();
-
-  // Parse HTML from Google Sheet
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(text, "text/html");
-  const table = doc.querySelector("table");
-
-  if (!table) throw new Error("No table found in published sheet");
-
-  const rows = Array.from(table.querySelectorAll("tr"));
-  return rows;
-}
-
-// Update seats dynamically
 async function updateSeatsFromSheet() {
   try {
-    const rows = await fetchSheetHtml();
+    const res = await fetch(sheetCsvUrl);
+    const text = await res.text();
 
-    // Subtract 1 for header row
-    const registrations = rows.length - 1;
+    // Split into rows
+    const rows = text.trim().split("\n");
+    const registrations = rows.length - 1; // minus header row
 
-    const totalSeats = 100; // Change to your actual number of seats
+    const totalSeats = 100; // change to your actual total
     const seatsLeft = totalSeats - registrations;
 
     document.getElementById("seats-count").innerText = seatsLeft >= 0 ? seatsLeft : 0;
@@ -267,11 +253,9 @@ async function updateSeatsFromSheet() {
   }
 }
 
-// Run on load
 updateSeatsFromSheet();
+setInterval(updateSeatsFromSheet, 30000); // auto refresh every 30s
 
-// Optionally refresh seats every 30 seconds
-// setInterval(updateSeatsFromSheet, 30000);
 </script>
 
 
@@ -328,6 +312,7 @@ body.fade-out {
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
