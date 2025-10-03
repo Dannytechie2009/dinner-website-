@@ -658,6 +658,27 @@ section {
   border-radius: 15px;
 }
 
+#seats {
+  text-align: center;
+  margin: 40px auto;
+}
+
+#seats h2 {
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 10px;
+}
+
+#seats-count {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
 /* Footer */
 footer {
@@ -677,6 +698,7 @@ footer .social-icons a:hover {
   transform: scale(1.2);
   text-shadow: 0 0 10px #f1c40f, 0 0 20px #f39c12;
 }
+
 
 
 
