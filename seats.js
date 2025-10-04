@@ -11,7 +11,7 @@ async function updateSeats() {
 
     // Count rows (registrations) → subtract 1 for header
     const rows = data.split("\n").length - 1;
-    const remaining = Math.max(totalSeats - rows, 0);
+    const remaining = Math.max(200 - rows, 0);
 
     counter.textContent = remaining;
   } catch (err) {
