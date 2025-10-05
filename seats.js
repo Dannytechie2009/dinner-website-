@@ -13,23 +13,30 @@ async function updateSeats() {
     const response = await fetch(sheetCSV);
     const csv = await response.text();
 
-    const rows = csv
-      .split("\n")
-      .filter((line, idx) => idx > 0 && line.trim() !== "")
-      .length;
+    // Split CSV lines
+    const lines = csv.split("\n");
 
-    const remaining = Math.max(totalSeats - rows, 0);
+    // Ignore the header row (first line)
+    const dataRows = lines.slice(1);
+
+    // Count only rows that have something in column A (first cell)
+    const validRows = dataRows.filter(line => {
+      const firstCell = line.split(",")[0].trim();
+      return firstCell !== "";
+    }).length;
+
+    const remaining = Math.max(totalSeats - validRows, 0);
     counter.textContent = remaining;
 
-    console.log(`Rows: ${rows} → Remaining: ${remaining}`);
+    console.log(`✅ ${validRows} registered → ${remaining} seats left`);
   } catch (error) {
-    console.error("Error fetching CSV:", error);
+    console.error("Error fetching seats:", error);
     counter.textContent = "⚠️ Error";
   }
 }
 
-// On load + interval
+// On load + refresh every 30 seconds
 document.addEventListener("DOMContentLoaded", () => {
   updateSeats();
-  setInterval(updateSeats, 30000);  // refresh every 30s
+  setInterval(updateSeats, 30000);
 });
