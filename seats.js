@@ -1,34 +1,35 @@
-// === CONFIG ===
-const totalSeats = 100; // total available
-const sheetCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZYg8LETwOxGYlUFs2fRXw20h15vqTrNTi7VLMyMLnivLGW6l52rLAMdtBjlK63k-bsGzChKf5GdUy/pub?output=csv";
+// CONFIG
+const totalSeats = 200;
+const sheetCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZYg8LETwOxGYlUFs2fRXw20h15vqTrNTi7VLMyMLnivLGW6l52rLAMdtBjlK63k-bsGzChKf5GdUy/pub?gid=0&single=true&output=csv";
 
-// === LOGIC ===
+// LOGIC
 async function updateSeats() {
   const counter = document.getElementById("seats-count");
-  if (!counter) return; // make sure the element exists
+  if (!counter) return;
 
-  counter.textContent = "⏳ Loading..."; // temporary message while fetching
+  counter.textContent = "⏳ Loading...";
 
   try {
-    const res = await fetch(sheetCSV);
-    const data = await res.text();
+    const response = await fetch(sheetCSV);
+    const csv = await response.text();
 
-    // Split by new line, remove empty rows
-    const rows = data.split("\n").filter(r => r.trim() !== "").length - 1;
+    const rows = csv
+      .split("\n")
+      .filter((line, idx) => idx > 0 && line.trim() !== "")
+      .length;
 
-    // Calculate remaining seats
     const remaining = Math.max(totalSeats - rows, 0);
     counter.textContent = remaining;
 
-    console.log(`✅ Registered: ${rows} | Remaining: ${remaining}`);
-  } catch (err) {
-    console.error("❌ Error fetching seat data:", err);
-    counter.textContent = "⚠️ Error loading seats";
+    console.log(`Rows: ${rows} → Remaining: ${remaining}`);
+  } catch (error) {
+    console.error("Error fetching CSV:", error);
+    counter.textContent = "⚠️ Error";
   }
 }
 
-// Run once DOM is loaded + refresh every 30s
+// On load + interval
 document.addEventListener("DOMContentLoaded", () => {
   updateSeats();
-  setInterval(updateSeats, 30000);
+  setInterval(updateSeats, 30000);  // refresh every 30s
 });
