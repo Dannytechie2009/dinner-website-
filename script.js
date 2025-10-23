@@ -6,7 +6,7 @@ document.addEventListener("mousemove", e => {
 });
 
 // Countdown Timer
-const deadline = new Date("Oct 31, 2025 23:59:59").getTime();
+const deadline = new Date("Nov 14, 2025 23:59:59").getTime();
 const timerElement = document.getElementById("timer");
 
 setInterval(() => {
