@@ -123,43 +123,40 @@
     
   </section>
 
-  <section id="transaction" class="section">
-  <h2><i class="fas fa-university"></i> How to Make a Payment</h2>
+  <section id="transaction" class="section glass">
+  <h2><i class="fas fa-money-check-alt"></i> How to Make a Payment</h2>
   <p>There are <strong>two ways</strong> to make payment for your registration:</p>
 
   <div class="payment-methods">
     <!-- Method 1: PayPal -->
-    <div class="method">
+    <div class="method glass-inner">
       <h3><i class="fab fa-paypal"></i> Method 1: Pay via PayPal</h3>
-      <p>Quick and easy — just use our official PayPal pool link below.</p>
-      <p><a href="https://www.paypal.com/pools/c/9jCQHRgpiB" target="_blank" class="paypal-link">
-        🔗 Click here to pay via PayPal
-      </a></p>
-      <p>After payment, please upload your proof of payment through the <strong>Contact Us</strong> form on this website.</p>
+      <p>Quick and secure — use our official PayPal pool link below.</p>
+      <a href="https://www.paypal.com/pools/c/9jCQHRgpiB" target="_blank" class="paypal-btn">
+        💳 Pay with PayPal
+      </a>
+      <p class="note">After payment, upload your proof through the <strong>Contact Us</strong> form.</p>
     </div>
 
     <!-- Method 2: Direct Bank Transfer -->
-    <div class="method">
+    <div class="method glass-inner">
       <h3><i class="fas fa-university"></i> Method 2: Direct to Bank Account</h3>
-      <p>Follow these simple steps to complete your payment securely and earn your ticket for entry.</p>
+      <p>Follow these simple steps to complete your payment securely and earn your ticket.</p>
 
       <div class="transaction-steps">
-        <!-- Step 1 -->
         <div class="step">
           <i class="fas fa-info-circle"></i>
           <h4>Step 1: Copy Bank Details</h4>
-          <p>Click the button below to copy account details for the transfer.</p>
+          <p>Click the button below to copy the bank details for the transfer.</p>
           <button class="copy" onclick="copyAccount()">Copy Bank Details</button>
         </div>
 
-        <!-- Step 2 -->
         <div class="step">
           <i class="fas fa-mobile-alt"></i>
           <h4>Step 2: Open Your Banking App</h4>
-          <p>Log in to your bank app or use online banking to start a transfer.</p>
+          <p>Log in to your bank app or online banking to start your transfer.</p>
         </div>
 
-        <!-- Step 3 -->
         <div class="step">
           <i class="fas fa-keyboard"></i>
           <h4>Step 3: Enter Bank Details</h4>
@@ -168,15 +165,14 @@
             <li><strong>Account Name:</strong> Olurotimi Aboaba</li>
             <li><strong>Account Number:</strong> 93701255</li>
             <li><strong>Sort Code:</strong> 60-84-07</li>
-            <li><strong>Payment Reference:</strong> Surname CD25 (e.g. “Abcdef CD25”)</li>
+            <li><strong>Payment Reference:</strong> Surname CD25 (e.g. "Abcdef CD25")</li>
           </ul>
         </div>
 
-        <!-- Step 4 -->
         <div class="step">
           <i class="fas fa-check-circle"></i>
           <h4>Step 4: Confirm & Upload Proof</h4>
-          <p>Verify all details, confirm the transaction, and send your proof of payment using the <strong>Contact Us</strong> form. Your e-ticket will be sent shortly after verification.</p>
+          <p>Verify all details, confirm the transaction, and send your proof via the <strong>Contact Us</strong> form. Your e-ticket will follow after verification.</p>
         </div>
       </div>
     </div>
@@ -198,57 +194,112 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
 </script>
 
 <style>
+  /* === GLASSMORPHISM PAYMENT SECTION === */
+  .glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 2rem;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .glass h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
   .payment-methods {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-  .method {
-    background: #f8f9fa;
+
+  .glass-inner {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    border-radius: 16px;
     padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
   }
+
   .method h3 {
-    color: #004aad;
+    color: #80d0ff;
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .paypal-link {
+
+  .paypal-btn {
     display: inline-block;
-    background: #0070ba;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #0070ba, #1546a0);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
   }
-  .paypal-link:hover {
-    background: #005c99;
+
+  .paypal-btn:hover {
+    background: linear-gradient(135deg, #005c99, #0e347a);
+    transform: translateY(-2px);
   }
-  .transaction-steps {
-    margin-top: 1rem;
-  }
+
   .step {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 1rem;
     padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    border-left: 5px solid #0070ba;
+    border-radius: 12px;
+    border-left: 4px solid #00aaff;
   }
+
   .step i {
-    color: #0070ba;
-    margin-right: 8px;
+    color: #00aaff;
+    margin-right: 6px;
   }
+
   .copy {
-    background: #004aad;
+    background: linear-gradient(135deg, #00aaff, #0066cc);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
   }
+
   .copy:hover {
-    background: #003a80;
+    background: linear-gradient(135deg, #0099ee, #004a99);
+  }
+
+  .note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  ul.bank-details {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+  }
+
+  ul.bank-details li {
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .glass {
+      padding: 1.5rem;
+    }
+    .paypal-btn, .copy {
+      width: 100%;
+      text-align: center;
+    }
   }
 </style>
 <section id="map" class="section py-16 text-center">
