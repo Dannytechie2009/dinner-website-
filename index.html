@@ -123,7 +123,7 @@
     
   </section>
 
-  <section id="transaction" class="section glass">
+ <section id="transaction" class="section glass">
   <h2><i class="fas fa-money-check-alt"></i> How to Make a Payment</h2>
   <p>There are <strong>two ways</strong> to make payment for your registration:</p>
 
@@ -207,9 +207,10 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
 
   .glass h2 {
     text-align: center;
-    color: #fff;
+    color: #f1c40f;
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow: 0 0 8px rgba(241, 196, 15, 0.6);
   }
 
   .payment-methods {
@@ -228,25 +229,27 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
   }
 
   .method h3 {
-    color: #80d0ff;
+    color: #f1c40f;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
   .paypal-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #0070ba, #1546a0);
-    color: #fff;
+    background: linear-gradient(135deg, #f1c40f, #caa70a);
+    color: #000;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
   }
 
   .paypal-btn:hover {
-    background: linear-gradient(135deg, #005c99, #0e347a);
+    background: linear-gradient(135deg, #ffdb4d, #b68f05);
     transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
   }
 
   .step {
@@ -254,26 +257,28 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 12px;
-    border-left: 4px solid #00aaff;
+    border-left: 4px solid #f1c40f;
   }
 
   .step i {
-    color: #00aaff;
+    color: #f1c40f;
     margin-right: 6px;
   }
 
   .copy {
-    background: linear-gradient(135deg, #00aaff, #0066cc);
-    color: white;
+    background: linear-gradient(135deg, #f1c40f, #b68f05);
+    color: black;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
   }
 
   .copy:hover {
-    background: linear-gradient(135deg, #0099ee, #004a99);
+    background: linear-gradient(135deg, #ffdb4d, #a97e03);
+    transform: scale(1.05);
   }
 
   .note {
@@ -302,6 +307,7 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
     }
   }
 </style>
+
 <section id="map" class="section py-16 text-center">
   <h2 class="text-3xl font-bold text-yellow-400 mb-6">
     <i class="fa-solid fa-map-location-dot mr-2"></i> Find The Venue
