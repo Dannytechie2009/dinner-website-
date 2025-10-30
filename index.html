@@ -235,23 +235,31 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
   }
 
   .paypal-btn {
-    width: 50px;
-    display: inline-block;
-    background: linear-gradient(135deg, #f1c40f, #caa70a);
-    color: #000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
-  }
+  display: inline-block;
+  background: linear-gradient(135deg, #f1c40f, #caa70a);
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(241, 196, 15, 0.4);
+  text-align: center;
+  min-width: 160px; /* looks balanced on all screens */
+}
 
-  .paypal-btn:hover {
-    background: linear-gradient(135deg, #ffdb4d, #b68f05);
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
-  }
+/* Center the PayPal button */
+.paypal-btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.paypal-btn:hover {
+  background: linear-gradient(135deg, #ffdb4d, #b68f05);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+}
 
   .step {
     background: rgba(255, 255, 255, 0.05);
