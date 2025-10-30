@@ -124,49 +124,133 @@
   </section>
 
   <section id="transaction" class="section">
-  <h2><i class="fas fa-university"></i> How to Make a Transaction</h2>
-  <p>Follow these simple steps to complete your payment securely and earn your ticket for entry.</p>
+  <h2><i class="fas fa-university"></i> How to Make a Payment</h2>
+  <p>There are <strong>two ways</strong> to make payment for your registration:</p>
 
-  <div class="transaction-steps">
-    <!-- Step 1 -->
-    <div class="step">
-      <i class="fas fa-info-circle"></i>
-      <h3>Step 1: Copy Bank Details</h3>
-      <p>Click the button below to copy account details for the transfer.</p>
-      <button class="copy" onclick="copyAccount()">Copy Bank Details</button>
-        
-      </button>
+  <div class="payment-methods">
+    <!-- Method 1: PayPal -->
+    <div class="method">
+      <h3><i class="fab fa-paypal"></i> Method 1: Pay via PayPal</h3>
+      <p>Quick and easy — just use our official PayPal pool link below.</p>
+      <p><a href="https://www.paypal.com/pools/c/9jCQHRgpiB" target="_blank" class="paypal-link">
+        🔗 Click here to pay via PayPal
+      </a></p>
+      <p>After payment, please upload your proof of payment through the <strong>Contact Us</strong> form on this website.</p>
     </div>
 
-    <!-- Step 2 -->
-    <div class="step">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>Step 2: Open Your Banking App</h3>
-      <p>Log in to your bank app or use online banking to start a transfer.</p>
-    </div>
+    <!-- Method 2: Direct Bank Transfer -->
+    <div class="method">
+      <h3><i class="fas fa-university"></i> Method 2: Direct to Bank Account</h3>
+      <p>Follow these simple steps to complete your payment securely and earn your ticket for entry.</p>
 
-    <!-- Step 3 -->
-    <div class="step">
-      <i class="fas fa-keyboard"></i>
-      <h3>Step 3: Enter Bank Details</h3>
-      <p>Paste or type in the details carefully:</p>
-      <ul class="bank-details">
-        <li><strong>Bank:</strong> Chase Bank UK</li>
-        <li><strong>Account Name:</strong>Olurotimi Aboaba</li>
-        <li><strong>Account Number:</strong> 93701255</li>
-        <li><strong>Sort Code:</strong> 60-84-07</li>
-        <li><strong>Payment Reference:</strong>Surname CD25.e.g."Abcdef CD25"</li>
-      </ul>
-    </div>
+      <div class="transaction-steps">
+        <!-- Step 1 -->
+        <div class="step">
+          <i class="fas fa-info-circle"></i>
+          <h4>Step 1: Copy Bank Details</h4>
+          <p>Click the button below to copy account details for the transfer.</p>
+          <button class="copy" onclick="copyAccount()">Copy Bank Details</button>
+        </div>
 
-    <!-- Step 4 -->
-    <div class="step">
-      <i class="fas fa-check-circle"></i>
-      <h3>Step 4: Confirm & Send  proof of payment through the Contact us menu form</h3>
-      <p>Verify all details, confirm the transaction, and save your receipt. and later on an e-ticket would be given to you</p>
+        <!-- Step 2 -->
+        <div class="step">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Step 2: Open Your Banking App</h4>
+          <p>Log in to your bank app or use online banking to start a transfer.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <i class="fas fa-keyboard"></i>
+          <h4>Step 3: Enter Bank Details</h4>
+          <ul class="bank-details">
+            <li><strong>Bank:</strong> Chase Bank UK</li>
+            <li><strong>Account Name:</strong> Olurotimi Aboaba</li>
+            <li><strong>Account Number:</strong> 93701255</li>
+            <li><strong>Sort Code:</strong> 60-84-07</li>
+            <li><strong>Payment Reference:</strong> Surname CD25 (e.g. “Abcdef CD25”)</li>
+          </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+          <i class="fas fa-check-circle"></i>
+          <h4>Step 4: Confirm & Upload Proof</h4>
+          <p>Verify all details, confirm the transaction, and send your proof of payment using the <strong>Contact Us</strong> form. Your e-ticket will be sent shortly after verification.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function copyAccount() {
+    const details = `
+Bank: Chase Bank UK
+Account Name: Olurotimi Aboaba
+Account Number: 93701255
+Sort Code: 60-84-07
+Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
+`;
+    navigator.clipboard.writeText(details);
+    alert("✅ Bank details copied successfully!");
+  }
+</script>
+
+<style>
+  .payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .method {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  .method h3 {
+    color: #004aad;
+    margin-bottom: 0.5rem;
+  }
+  .paypal-link {
+    display: inline-block;
+    background: #0070ba;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .paypal-link:hover {
+    background: #005c99;
+  }
+  .transaction-steps {
+    margin-top: 1rem;
+  }
+  .step {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 5px solid #0070ba;
+  }
+  .step i {
+    color: #0070ba;
+    margin-right: 8px;
+  }
+  .copy {
+    background: #004aad;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .copy:hover {
+    background: #003a80;
+  }
+</style>
 <section id="map" class="section py-16 text-center">
   <h2 class="text-3xl font-bold text-yellow-400 mb-6">
     <i class="fa-solid fa-map-location-dot mr-2"></i> Find The Venue
