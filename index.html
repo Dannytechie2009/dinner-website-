@@ -236,10 +236,17 @@ Payment Reference: Surname CD25 (e.g. "Abcdef CD25")
     margin-bottom: 0.5rem;
   }
 
-  ..paypal-btn-container {
+ .paypal-btn-container {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 1.5rem 0 1rem; /* ⬆️ adds space above and below */
+}
+
+.note {
+  text-align: center; /* centers the note nicely */
+  margin-top: 1rem;   /* adds space between the button and the note */
+  opacity: 0.9;
+  font-size: 0.95rem;
 }
 
 .paypal-btn {
